@@ -9,6 +9,7 @@
 		var state:int;
 		var playFrame:int;
 		var firstExplodingFrame:int;
+		var minimalCooldown:int;
 		var lastExplodingFrame:int;
 		var scale:Number;
 		var speed:Number;
@@ -18,6 +19,7 @@
 		public function Enemy(m:Main) {
 			main = m;
 			
+			minimalCooldown = 10;
 			randomWeaponTemp();
 			cooldown = weaponTemp;
 			state = 0;
@@ -68,7 +70,7 @@
 		}
 
 		public function randomWeaponTemp():void {
-			weaponTemp = Math.ceil(Math.random()*150)+10;
+			weaponTemp = Math.ceil(Math.random()*150) + minimalCooldown;
 		}
 		
 	}

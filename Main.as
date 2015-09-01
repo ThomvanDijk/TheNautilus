@@ -35,6 +35,7 @@
 		
 		var playerScore:int;
 		var maxParticles:int;
+		var enemyCooldown:int;
 		var beginTime:int;
 		var maxEnemies:int;
 		var enemyType:int;
@@ -139,6 +140,7 @@
 			if (Math.random() > spawnRate) {
 				var enemy:Enemy = new Enemy(this);
 				enemy.playFrame = enemyType;
+				enemy.minimalCooldown = enemyCooldown;
 				addChild(enemy);
 				enemyList.push(enemy);
 			}
