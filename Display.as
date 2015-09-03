@@ -25,56 +25,54 @@
 		public function Display(m:Main) {
 			main = m;
 			
-			//game over text and upgrades text
-			text1.x = 300;
-			text1.y = 250;
-			text1.border = false;
-			text1.textColor = 0xFFFFFF;
-			text1.autoSize = TextFieldAutoSize.CENTER;
-			
-			text4.x = 300;
-			text4.y = 300;
-			text4.border = false;
-			text4.textColor = 0xFFFFFF;
-			text4.autoSize = TextFieldAutoSize.CENTER;
-			
-			//already add the upgrades text
-			main.addChild(text4);
-			text4.alpha = 0;
-			
 			text1Format.size = 80;
 			text1Format.font = mainFont.fontName;
-			
-			//heads up display text
-			text2.x = 10;
-			text2.y = 765;
-			text2.border = false;
-			text2.textColor = 0xFFFFFF;
-			text2.alpha = 0;
-			text2.autoSize = TextFieldAutoSize.LEFT;
-			
-			text3.x = 10;
-			text3.y = 735;
-			text3.border = false;
-			text3.textColor = 0xFFFFFF;
-			text3.alpha = 0;
-			text3.autoSize = TextFieldAutoSize.LEFT;
-			
-			text5.x = 220;
-			text5.y = 360;
-			text5.border = false;
-			text5.textColor = 0xFFFFFF;
-			text5.autoSize = TextFieldAutoSize.LEFT;
 			
 			text2Format.size = 30;
 			text2Format.font = mainFont.fontName;
 			
+			//game over text and upgrades text
+			text1.x = -2000;
+			text1.border = false;
+			text1.textColor = 0xFFFFFF;
+			text1.autoSize = TextFieldAutoSize.CENTER;
 			text1.defaultTextFormat = text1Format;
-			text4.defaultTextFormat = text1Format;
-			text2.defaultTextFormat = text2Format;
-			text3.defaultTextFormat = text2Format;
-			text5.defaultTextFormat = text2Format;
+			main.addChild(text1);
+			text1.text = "Game Over"
 			
+			text4.x = -2000;
+			text4.border = false;
+			text4.textColor = 0xFFFFFF;
+			text4.autoSize = TextFieldAutoSize.CENTER;
+			text4.defaultTextFormat = text1Format;
+			
+			//already add the upgrades text
+			main.addChild(text4);
+			text4.alpha = 0;
+
+			//heads up display text
+			text2.x = -2000;
+			text2.border = false;
+			text2.textColor = 0xFFFFFF;
+			text2.autoSize = TextFieldAutoSize.LEFT;
+			text2.defaultTextFormat = text2Format;
+			main.addChild(text2);
+			
+			text3.x = -2000;
+			text3.border = false;
+			text3.textColor = 0xFFFFFF;
+			text3.autoSize = TextFieldAutoSize.LEFT;
+			text3.defaultTextFormat = text2Format;
+			main.addChild(text3);
+			
+			text5.x = -2000;
+			text5.border = false;
+			text5.textColor = 0xFFFFFF;
+			text5.autoSize = TextFieldAutoSize.LEFT;
+			text5.defaultTextFormat = text2Format;
+			main.addChild(text5);
+			text5.text = "Enter your name:"
+
 			//Input filed.
 			inputField = new TextField();
 			inputField.type = TextFieldType.INPUT;
@@ -96,11 +94,11 @@
 		}
 		
 		public function gameOverText():void {
-			main.addChild(text1);
-			text1.text = "Game Over"
+			text1.x = 300;
+			text1.y = 250;
 			
-			main.addChild(text5);
-			text5.text = "Enter your name:"
+			text5.x = 220;
+			text5.y = 360;
 			
 			inputField.x = 250;
 			inputField.y = 400;
@@ -110,16 +108,20 @@
 		}
 		
 		public function damageText():void {
-			main.addChild(text2);
+			text2.x = 10;
+			text2.y = 765;
 			text2.text = "Hi-Score " + String(main.player.damageTaken);
 		}
 		
 		public function scoreText():void {
-			main.addChild(text3);
+			text3.x = 10;
+			text3.y = 735;
 			text3.text = "  Score " + String(main.playerScore);
 		}
 		
 		public function upgradeText(upgrade):void {
+			text4.x = 300;
+			text4.y = 300;
 			text4.alpha = 1;
 			text4.text = String(upgrade);
 		}
