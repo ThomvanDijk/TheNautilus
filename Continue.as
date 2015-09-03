@@ -4,11 +4,11 @@
 	import flash.events.*;
 	import flash.display.MovieClip;
 	
-	public class Aback extends SimpleButton {
+	public class Continue extends SimpleButton {
 		
 		var main:Main;
-		
-		public function Aback(m:Main) {
+
+		public function Continue(m:Main) {
 			main = m;
 			addEventListener(MouseEvent.CLICK, onClick);
 		}
@@ -16,6 +16,7 @@
 		public function onClick(event:MouseEvent):void {
 			
 		}
+
 	}
 	
 }

@@ -2,6 +2,7 @@
 	
 	import flash.text.TextField;
 	import flash.text.TextFormat;
+	import flash.text.TextFieldType;
 	import flash.text.TextFieldAutoSize;
 	
 	public class Display {
@@ -12,7 +13,11 @@
 		
 		var text2:TextField = new TextField();
 		var text3:TextField = new TextField();
+		var text5:TextField = new TextField();
 		var text2Format:TextFormat = new TextFormat();
+		
+		//var scoreText:TextField = new TextField();
+		var inputField:TextField = new TextField();
 		
 		var mainFont:Visitor = new Visitor();
 		var main:Main;
@@ -22,7 +27,7 @@
 			
 			//game over text and upgrades text
 			text1.x = 300;
-			text1.y = 300;
+			text1.y = 250;
 			text1.border = false;
 			text1.textColor = 0xFFFFFF;
 			text1.autoSize = TextFieldAutoSize.CENTER;
@@ -55,6 +60,12 @@
 			text3.alpha = 0;
 			text3.autoSize = TextFieldAutoSize.LEFT;
 			
+			text5.x = 220;
+			text5.y = 360;
+			text5.border = false;
+			text5.textColor = 0xFFFFFF;
+			text5.autoSize = TextFieldAutoSize.LEFT;
+			
 			text2Format.size = 30;
 			text2Format.font = mainFont.fontName;
 			
@@ -62,6 +73,17 @@
 			text4.defaultTextFormat = text1Format;
 			text2.defaultTextFormat = text2Format;
 			text3.defaultTextFormat = text2Format;
+			text5.defaultTextFormat = text2Format;
+			
+			//Input filed.
+			inputField = new TextField();
+			inputField.type = TextFieldType.INPUT;
+			inputField.defaultTextFormat = text2Format;
+			inputField.background = true;
+			inputField.width = 200;
+			inputField.height = 30;
+			main.addChild(inputField);
+			inputField.x = -2000;
 			
 			damageText();
 			scoreText();
@@ -76,6 +98,15 @@
 		public function gameOverText():void {
 			main.addChild(text1);
 			text1.text = "Game Over"
+			
+			main.addChild(text5);
+			text5.text = "Enter your name:"
+			
+			inputField.x = 250;
+			inputField.y = 400;
+			
+			main.con.x = 350;
+			main.con.y = 500;
 		}
 		
 		public function damageText():void {

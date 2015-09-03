@@ -31,7 +31,8 @@
 		var start:Start;
 		var score:Score;
 		var credits:Credits;
-		var aback:Aback;
+		var back:Back;
+		var con:Continue;
 		
 		var playerScore:int;
 		var maxParticles:int;
@@ -64,15 +65,19 @@
 			credits.x = 350;
 			credits.y = 420;
 			
-			aback = new Aback(this);
-			addChild(aback);
-			aback.x = 4000;
-			aback.y = 300;
+			back = new Back(this);
+			addChild(back);
+			back.x = 4000;
+			back.y = 300;
+			
+			con = new Continue(this);
+			addChild(con);
+			con.x = -2000;
 			
 			playerScore = 0;
 			deltaTime = 0;
 			maxParticles = 100;
-			spawnRate = 0.99;
+			spawnRate = 0.98;
 			maxEnemies = 30;
 			enemyType = 1;
 			

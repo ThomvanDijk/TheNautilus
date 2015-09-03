@@ -75,7 +75,7 @@
 				tier10 = true;
 			}
 			if (main.playerScore == 600 && !tier11) {
-				main.spawnRate = 0.98;
+				main.spawnRate = 0.96;
 				main.display.upgradeText("Spawn Rate Increased!");
 				tier11 = true;
 			}
