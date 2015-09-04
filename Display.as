@@ -82,9 +82,6 @@
 			inputField.height = 30;
 			main.addChild(inputField);
 			inputField.x = -2000;
-			
-			damageText();
-			scoreText();
 		}
 		
 		public function update():void {

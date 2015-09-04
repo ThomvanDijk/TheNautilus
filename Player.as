@@ -42,6 +42,7 @@
 				playFrame = lastExplodingFrame + 1;
 				this.cooldown = -1;
 				main.started = false;
+				main.display.text4.x = -2000;
 			}
 			this.gotoAndStop(playFrame);
 		}

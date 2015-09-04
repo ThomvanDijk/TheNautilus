@@ -27,7 +27,9 @@
 		var particle:Particle;
 		var display:Display;
 		var levels:Levels;
+		var hiScore:HiScore;
 		
+		//Buttons.
 		var start:Start;
 		var score:Score;
 		var credits:Credits;
@@ -83,7 +85,6 @@
 			
 			player = new Player(this);
 			addChild(player);
-			player.alpha = 0;
 			player.gotoAndStop(1);
 			
 			display = new Display(this);
@@ -106,7 +107,7 @@
 			updateEnemies();
 			
 			if (!started) {
-				
+				player.x = -2000;
 			}
 			
 			if (started) {

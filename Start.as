@@ -15,12 +15,14 @@
 		
 		public function onClick(event:MouseEvent):void {
 			main.started = true;
-			main.start.x = 4000;
-			main.score.x = 4000;
-			main.credits.x = 4000;
-			main.player.alpha = 1;
-			main.display.text2.alpha = 1;
-			main.display.text3.alpha = 1;
+			
+			main.start.x = -2000;
+			main.score.x = -2000;
+			main.credits.x = -2000;
+			
+			main.player.x = 350;
+			main.display.damageText();
+			main.display.scoreText();
 		}
 	}
 	
