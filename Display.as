@@ -91,7 +91,7 @@
 		}
 		
 		public function gameOverText():void {
-			text1.x = 300;
+			text1.x = 150;
 			text1.y = 250;
 			
 			text5.x = 220;
@@ -100,8 +100,8 @@
 			inputField.x = 250;
 			inputField.y = 400;
 			
-			main.con.x = 350;
-			main.con.y = 500;
+			main.submit.x = 350;
+			main.submit.y = 500;
 		}
 		
 		public function damageText():void {

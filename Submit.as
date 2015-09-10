@@ -4,11 +4,11 @@
 	import flash.events.*;
 	import flash.display.MovieClip;
 	
-	public class Continue extends SimpleButton {
+	public class Submit extends SimpleButton {
 		
 		var main:Main;
 
-		public function Continue(m:Main) {
+		public function Submit(m:Main) {
 			main = m;
 			addEventListener(MouseEvent.CLICK, onClick);
 		}
@@ -43,8 +43,9 @@
 			main.player.playFrame = 1;
 			
 			//Save the players name.
-			var str:String = main.display.inputField.text;
-			trace(str);
+			var temp:String = main.display.inputField.text;
+			main.hiScore.saveScore(temp);
+			//trace(main.playerScore);
 			
 			//This button is moved away.
 			this.x = -2000;

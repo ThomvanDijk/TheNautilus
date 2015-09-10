@@ -24,7 +24,7 @@
 			cooldown = weaponTemp;
 			state = 0;
 			playFrame = 1;
-			firstExplodingFrame = 6;
+			firstExplodingFrame = 7;
 			lastExplodingFrame = 14;
 			speed = 50;
 			this.x = (Math.random()*650) + 25;
@@ -38,13 +38,12 @@
 			if (state == 1) {
 				playFrame = firstExplodingFrame++;
 				if (playFrame >= lastExplodingFrame) {
-					playFrame = lastExplodingFrame;
+					playFrame = lastExplodingFrame + 1;
 					state = 2;
 				}
 			}
 			if (state == 2) {
-				playFrame = lastExplodingFrame + 1;
-				this.x = 2000;
+				this.x = -2000;
 			}
 			this.gotoAndStop(playFrame);
 			movement();

@@ -34,12 +34,11 @@
 			if (state == 1) {
 				playFrame++;
 				if (playFrame >= lastExplodingFrame) {
-					playFrame = lastExplodingFrame;
+					playFrame = lastExplodingFrame + 1;
 					state = 2;
 				}
 			}
 			if (state == 2) {
-				playFrame = lastExplodingFrame + 1;
 				this.cooldown = -1;
 				main.started = false;
 				main.display.text4.x = -2000;

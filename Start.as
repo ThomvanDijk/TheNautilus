@@ -21,6 +21,7 @@
 			main.credits.x = -2000;
 			
 			main.player.x = 350;
+			main.playerScore = 0;
 			main.display.damageText();
 			main.display.scoreText();
 		}

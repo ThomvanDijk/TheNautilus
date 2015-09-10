@@ -34,7 +34,7 @@
 		var score:Score;
 		var credits:Credits;
 		var back:Back;
-		var con:Continue;
+		var submit:Submit;
 		
 		var playerScore:int;
 		var maxParticles:int;
@@ -72,9 +72,11 @@
 			back.x = 4000;
 			back.y = 300;
 			
-			con = new Continue(this);
-			addChild(con);
-			con.x = -2000;
+			submit = new Submit(this);
+			addChild(submit);
+			submit.x = -2000;
+			
+			hiScore = new HiScore(this);
 			
 			playerScore = 0;
 			deltaTime = 0;
