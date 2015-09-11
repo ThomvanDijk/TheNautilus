@@ -87,6 +87,7 @@
 			
 			player = new Player(this);
 			addChild(player);
+			player.x = -2000;
 			player.gotoAndStop(1);
 			
 			display = new Display(this);
