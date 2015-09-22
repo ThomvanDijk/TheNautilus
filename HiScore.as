@@ -16,7 +16,7 @@
 		var main:Main;
 		var highScore:Array;
 		
-		public static const URL:String = "http://localhost/portfolio/games/content/highscores.php";
+		public static const URL:String = "http://localhost/portfolio/develop/flashcontent/thenautilus/highscores.php";
 		
 		private var getLoader:URLLoader;
 		private var getRequest:URLRequest;
@@ -27,12 +27,10 @@
 		public function HiScore(m:Main) {
 			main = m;
 			highScore = new Array();
-
-			sendData();
-			loadData();
+			loadScore();
 		}
 		
-		private function loadData():void {
+		public function loadScore():void {
 			var randomParam:String = "?p=" + Math.floor(Math.random() * (10000000));
 			getLoader = new URLLoader();
 			getRequest = new URLRequest(URL + randomParam);
@@ -45,35 +43,38 @@
 			getLoader.load(getRequest);
 		}
 		
-		function sendData():void {
+		public function saveScore(playerName:String):void {
 			setLoader = new URLLoader;
 			setRequest = new URLRequest(URL);
 			urlvars = new URLVariables;
 			setLoader.dataFormat = URLLoaderDataFormat.VARIABLES;
 			setRequest.method = URLRequestMethod.POST;
-			urlvars.name = "FINALLY";
-			urlvars.score = "999999";
+			urlvars.name = playerName;
+			urlvars.score = main.playerScore;
 			setRequest.data = urlvars;
 			setLoader.load(setRequest);
 		}
 		
 		public function onLoadData(e:Event):void {
-			trace("onLoadData result=" + e.target.data);
+			var databaseString:String = (e.target.data);
+			//trace(databaseString); //onLoadData result.
+			highScore = databaseString.split(",");
+			
+			trace(highScore[0]);
+			
+			//highScore.push({player: playerName, score: main.playerScore});
+			//highScore.push({score: 918, player: "Harry"});
+			//highScore.sortOn("score", Array.DESCENDING | Array.NUMERIC);
+			//for (var i:int = 0; i < highScore.length; i++) {
+				//trace(highScore[i].player, highScore[i].score);
+			//}
+
 		}
 		
 		private function onDataFiledToLoad(e:IOErrorEvent):void {
 			trace("onDataFiledToLoad error=" + e.text);
 		}
-		
-		public function saveScore(playerName:String):void {
-			highScore.push({player: playerName, score: main.playerScore});
-			//highScore.push({score: 918, player: "Harry"});
-			highScore.sortOn("score", Array.DESCENDING | Array.NUMERIC);
-			for (var i:int = 0; i < highScore.length; i++) {
-				//trace(highScore[i].player, highScore[i].score);
-			}
-		}
-		
+
 	}
 	
 }

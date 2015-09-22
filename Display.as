@@ -14,9 +14,9 @@
 		var text2:TextField = new TextField();
 		var text3:TextField = new TextField();
 		var text5:TextField = new TextField();
+		var text6:TextField = new TextField();
 		var text2Format:TextFormat = new TextFormat();
 		
-		//var scoreText:TextField = new TextField();
 		var inputField:TextField = new TextField();
 		
 		var mainFont:Visitor = new Visitor();
@@ -82,6 +82,14 @@
 			inputField.height = 30;
 			main.addChild(inputField);
 			inputField.x = -2000;
+			
+			//HighScore table.
+			text6.x = -2000;
+			text6.border = false;
+			text6.textColor = 0xFFFFFF;
+			text6.autoSize = TextFieldAutoSize.LEFT;
+			text6.defaultTextFormat = text2Format;
+			main.addChild(text6);
 		}
 		
 		public function update():void {
@@ -107,7 +115,7 @@
 		public function damageText():void {
 			text2.x = 10;
 			text2.y = 765;
-			text2.text = "Hi-Score " + String(main.player.damageTaken);
+			text2.text = "Hi-Score " + String(main.hiScore.loadScore());
 		}
 		
 		public function scoreText():void {
@@ -121,6 +129,10 @@
 			text4.y = 300;
 			text4.alpha = 1;
 			text4.text = String(upgrade);
+		}
+		
+		public function highScoreTable():void {
+			text6.text = "High Scores:"
 		}
 
 	}
