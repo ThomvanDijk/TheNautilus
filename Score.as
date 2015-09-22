@@ -15,6 +15,7 @@
 		
 		public function onClick(event:MouseEvent):void {
 			main.hiScore.loadScore();
+			main.display.highScoreTable();
 		}
 	}
 	

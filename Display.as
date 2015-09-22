@@ -85,6 +85,7 @@
 			
 			//HighScore table.
 			text6.x = -2000;
+			text6.y = 100;
 			text6.border = false;
 			text6.textColor = 0xFFFFFF;
 			text6.autoSize = TextFieldAutoSize.LEFT;
@@ -132,7 +133,9 @@
 		}
 		
 		public function highScoreTable():void {
-			text6.text = "High Scores:"
+			text6.x = 250;
+			text6.text = "High Scores: " + "\n" + main.hiScore.highScore[1].player;
+
 		}
 
 	}

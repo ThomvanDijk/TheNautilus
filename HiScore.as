@@ -10,6 +10,7 @@
 	import flash.net.URLVariables;
 	import flash.text.TextField;
 	import flash.events.IOErrorEvent
+	import flash.sampler.Sample;
 	
 	public class HiScore extends MovieClip {
 		
@@ -58,16 +59,19 @@
 		public function onLoadData(e:Event):void {
 			var databaseString:String = (e.target.data);
 			//trace(databaseString); //onLoadData result.
-			highScore = databaseString.split(",");
-			
-			trace(highScore[0]);
+			highScore = databaseString.split("\n"); //Split on newline.
+			for(var i:int = 0; i < highScore.length; i++) {
+				var singleScore:String = highScore[i];
+				var tempString:Array = singleScore.split(",");
+				highScore[i] = ({player: tempString[0], score: tempString[1]});
+			}
 			
 			//highScore.push({player: playerName, score: main.playerScore});
 			//highScore.push({score: 918, player: "Harry"});
-			//highScore.sortOn("score", Array.DESCENDING | Array.NUMERIC);
-			//for (var i:int = 0; i < highScore.length; i++) {
-				//trace(highScore[i].player, highScore[i].score);
-			//}
+			highScore.sortOn("score", Array.DESCENDING | Array.NUMERIC);
+			for (var j:int = 0; j < highScore.length; j++) {
+				trace(j + " " + highScore[j].player, highScore[j].score);
+			}
 
 		}
 		
