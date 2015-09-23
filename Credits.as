@@ -14,7 +14,14 @@
 		}
 		
 		public function onClick(event:MouseEvent):void {
+			//Clean the stage.
+			main.start.x = -2000;
+			main.score.x = -2000;
+			main.credits.x = -2000;
 			
+			//Add Credits.
+			main.display.creditsText();
+			main.back.x = 350;
 		}
 	}
 	

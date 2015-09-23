@@ -109,6 +109,9 @@
 			enemyBulletPosition();
 			updateEnemies();
 			
+			score.update();
+			start.update();
+			
 			if (!started) {
 				player.x = -2000;
 			}

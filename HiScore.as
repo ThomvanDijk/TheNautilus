@@ -15,6 +15,7 @@
 	public class HiScore extends MovieClip {
 		
 		var main:Main;
+		var scoreLoaded:Boolean;
 		var highScore:Array;
 		
 		public static const URL:String = "http://localhost/portfolio/develop/flashcontent/thenautilus/highscores.php";
@@ -28,6 +29,7 @@
 		public function HiScore(m:Main) {
 			main = m;
 			highScore = new Array();
+			scoreLoaded = false;
 		}
 		
 		public function loadScore():void {
@@ -47,7 +49,7 @@
 			setLoader = new URLLoader;
 			setRequest = new URLRequest(URL);
 			urlvars = new URLVariables;
-			setLoader.dataFormat = URLLoaderDataFormat.VARIABLES;
+			setLoader.dataFormat = URLLoaderDataFormat.TEXT;
 			setRequest.method = URLRequestMethod.POST;
 			urlvars.name = playerName;
 			urlvars.score = main.playerScore;
@@ -68,11 +70,13 @@
 			//highScore.push({player: playerName, score: main.playerScore});
 			//highScore.push({score: 918, player: "Harry"});
 			highScore.sortOn("score", Array.DESCENDING | Array.NUMERIC);
-			for (var j:int = 0; j < highScore.length; j++) {
-				trace(j + " " + highScore[j].player, highScore[j].score);
-			}
-			//Show the highscore on the highscore tab.
-			main.display.highScoreTable();
+			
+			//for(var j:int = 0; j < highScore.length; j++) {
+				//trace(j + " " + highScore[j].player, highScore[j].score);
+			//}
+			
+			//The score is loaded.
+			scoreLoaded = true;
 		}
 		
 		private function onDataFiledToLoad(e:IOErrorEvent):void {

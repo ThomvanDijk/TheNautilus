@@ -17,6 +17,9 @@
 		var text5:TextField = new TextField();
 		var text2Format:TextFormat = new TextFormat();
 		
+		var text9:TextField = new TextField();
+		var text5Format:TextFormat = new TextFormat();
+		
 		var text6:TextField = new TextField();
 		var text7:TextField = new TextField();
 		var text3Format:TextFormat = new TextFormat();
@@ -44,6 +47,10 @@
 			text4Format.size = 50;
 			text4Format.align = TextFormatAlign.RIGHT;
 			text4Format.font = mainFont.fontName;
+			
+			text5Format.size = 30;
+			text5Format.align = TextFormatAlign.CENTER;
+			text5Format.font = mainFont.fontName;
 			
 			//game over text and upgrades text
 			text1.x = -2000;
@@ -99,7 +106,7 @@
 			
 			//HighScore ranks.
 			text6.x = -2000;
-			text6.y = 100;
+			text6.y = 50;
 			text6.border = false;
 			text6.textColor = 0xFFFFFF;
 			text6.autoSize = TextFieldAutoSize.LEFT;
@@ -108,7 +115,7 @@
 			
 			//Highscore table names.
 			text7.x = -2000;
-			text7.y = 100;
+			text7.y = 50;
 			text7.border = false;
 			text7.textColor = 0xFFFFFF;
 			text7.autoSize = TextFieldAutoSize.LEFT;
@@ -117,12 +124,21 @@
 			
 			//Highscore table scores.
 			text8.x = -2000;
-			text8.y = 100;
+			text8.y = 50;
 			text8.border = false;
 			text8.textColor = 0xFFFFFF;
 			text8.autoSize = TextFieldAutoSize.LEFT;
 			text8.defaultTextFormat = text4Format;
 			main.addChild(text8);
+			
+			//Highscore table scores.
+			text9.x = -2000;
+			text9.y = 300;
+			text9.border = false;
+			text9.textColor = 0xFFFFFF;
+			text9.autoSize = TextFieldAutoSize.LEFT;
+			text9.defaultTextFormat = text5Format;
+			main.addChild(text9);
 		}
 		
 		public function update():void {
@@ -148,13 +164,13 @@
 		public function damageText():void {
 			text2.x = 10;
 			text2.y = 765;
-			text2.text = "Hi-Score " ; //String(main.hiScore.loadScore());
+			text2.text = "Hi-Score " + main.hiScore.highScore[1].score;
 		}
 		
 		public function scoreText():void {
 			text3.x = 10;
 			text3.y = 735;
-			text3.text = "  Score " + String(main.playerScore);
+			text3.text = "  Score " + main.playerScore;
 		}
 		
 		public function upgradeText(upgrade):void {
@@ -166,8 +182,8 @@
 		
 		public function highScoreTable():void {
 			//Highscore names
-			text6.x = 25;
-			text6.text = "      High Scores: " + "\n\n" 
+			text6.x = 20;
+			text6.text = "      High Scores:" + "\n\n" 
 			+ "#1" + "\n"
 			+ "#2" + "\n"
 			+ "#3" + "\n"
@@ -180,7 +196,7 @@
 			+ "#10";
 			
 			//Highscore scores
-			text7.x = 125;
+			text7.x = 110;
 			text7.text = "\n\n" +
 			main.hiScore.highScore[1].player + "\n"
 			+ main.hiScore.highScore[2].player + "\n"
@@ -205,6 +221,16 @@
 			+ main.hiScore.highScore[8].score + "\n"
 			+ main.hiScore.highScore[9].score + "\n"
 			+ main.hiScore.highScore[10].score;
+		}
+		
+		public function creditsText():void {
+			text6.x = 254;
+			text6.text = "Credits";
+			text9.x = 197;
+			text9.text = "Development:" + "\n"
+			+ "Thom van Dijk" + "\n\n"
+			+ "Artwork:" + "\n"
+			+ "Michiel Bastiaannet";
 		}
 
 	}

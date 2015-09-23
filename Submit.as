@@ -45,7 +45,6 @@
 			//Save the players name.
 			var temp:String = main.display.inputField.text;
 			main.hiScore.saveScore(temp);
-			//trace(main.playerScore);
 			
 			//This button is moved away.
 			this.x = -2000;
