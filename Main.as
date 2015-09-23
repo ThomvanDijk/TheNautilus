@@ -69,8 +69,8 @@
 			
 			back = new Back(this);
 			addChild(back);
-			back.x = 4000;
-			back.y = 300;
+			back.x = -2000;
+			back.y = 750;
 			
 			submit = new Submit(this);
 			addChild(submit);

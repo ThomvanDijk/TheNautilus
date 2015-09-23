@@ -14,8 +14,14 @@
 		}
 		
 		public function onClick(event:MouseEvent):void {
+			//Clean the stage.
+			main.start.x = -2000;
+			main.score.x = -2000;
+			main.credits.x = -2000;
+			
+			//Add the high score.
 			main.hiScore.loadScore();
-			main.display.highScoreTable();
+			main.back.x = 350;
 		}
 	}
 	

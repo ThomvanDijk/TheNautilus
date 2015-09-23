@@ -28,7 +28,6 @@
 		public function HiScore(m:Main) {
 			main = m;
 			highScore = new Array();
-			loadScore();
 		}
 		
 		public function loadScore():void {
@@ -72,7 +71,8 @@
 			for (var j:int = 0; j < highScore.length; j++) {
 				trace(j + " " + highScore[j].player, highScore[j].score);
 			}
-
+			//Show the highscore on the highscore tab.
+			main.display.highScoreTable();
 		}
 		
 		private function onDataFiledToLoad(e:IOErrorEvent):void {

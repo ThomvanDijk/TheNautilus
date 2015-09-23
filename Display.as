@@ -2,6 +2,7 @@
 	
 	import flash.text.TextField;
 	import flash.text.TextFormat;
+	import flash.text.TextFormatAlign;
 	import flash.text.TextFieldType;
 	import flash.text.TextFieldAutoSize;
 	
@@ -14,8 +15,14 @@
 		var text2:TextField = new TextField();
 		var text3:TextField = new TextField();
 		var text5:TextField = new TextField();
-		var text6:TextField = new TextField();
 		var text2Format:TextFormat = new TextFormat();
+		
+		var text6:TextField = new TextField();
+		var text7:TextField = new TextField();
+		var text3Format:TextFormat = new TextFormat();
+		
+		var text8:TextField = new TextField();
+		var text4Format:TextFormat = new TextFormat();
 		
 		var inputField:TextField = new TextField();
 		
@@ -30,6 +37,13 @@
 			
 			text2Format.size = 30;
 			text2Format.font = mainFont.fontName;
+			
+			text3Format.size = 50;
+			text3Format.font = mainFont.fontName;
+			
+			text4Format.size = 50;
+			text4Format.align = TextFormatAlign.RIGHT;
+			text4Format.font = mainFont.fontName;
 			
 			//game over text and upgrades text
 			text1.x = -2000;
@@ -83,14 +97,32 @@
 			main.addChild(inputField);
 			inputField.x = -2000;
 			
-			//HighScore table.
+			//HighScore ranks.
 			text6.x = -2000;
 			text6.y = 100;
 			text6.border = false;
 			text6.textColor = 0xFFFFFF;
 			text6.autoSize = TextFieldAutoSize.LEFT;
-			text6.defaultTextFormat = text2Format;
+			text6.defaultTextFormat = text3Format;
 			main.addChild(text6);
+			
+			//Highscore table names.
+			text7.x = -2000;
+			text7.y = 100;
+			text7.border = false;
+			text7.textColor = 0xFFFFFF;
+			text7.autoSize = TextFieldAutoSize.LEFT;
+			text7.defaultTextFormat = text3Format;
+			main.addChild(text7);
+			
+			//Highscore table scores.
+			text8.x = -2000;
+			text8.y = 100;
+			text8.border = false;
+			text8.textColor = 0xFFFFFF;
+			text8.autoSize = TextFieldAutoSize.LEFT;
+			text8.defaultTextFormat = text4Format;
+			main.addChild(text8);
 		}
 		
 		public function update():void {
@@ -116,7 +148,7 @@
 		public function damageText():void {
 			text2.x = 10;
 			text2.y = 765;
-			text2.text = "Hi-Score " + String(main.hiScore.loadScore());
+			text2.text = "Hi-Score " ; //String(main.hiScore.loadScore());
 		}
 		
 		public function scoreText():void {
@@ -133,9 +165,46 @@
 		}
 		
 		public function highScoreTable():void {
-			text6.x = 250;
-			text6.text = "High Scores: " + "\n" + main.hiScore.highScore[1].player;
-
+			//Highscore names
+			text6.x = 25;
+			text6.text = "      High Scores: " + "\n\n" 
+			+ "#1" + "\n"
+			+ "#2" + "\n"
+			+ "#3" + "\n"
+			+ "#4" + "\n"
+			+ "#5" + "\n"
+			+ "#6" + "\n"
+			+ "#7" + "\n"
+			+ "#8" + "\n"
+			+ "#9" + "\n"
+			+ "#10";
+			
+			//Highscore scores
+			text7.x = 125;
+			text7.text = "\n\n" +
+			main.hiScore.highScore[1].player + "\n"
+			+ main.hiScore.highScore[2].player + "\n"
+			+ main.hiScore.highScore[3].player + "\n"
+			+ main.hiScore.highScore[4].player + "\n"
+			+ main.hiScore.highScore[5].player + "\n"
+			+ main.hiScore.highScore[6].player + "\n"
+			+ main.hiScore.highScore[7].player + "\n"
+			+ main.hiScore.highScore[8].player + "\n"
+			+ main.hiScore.highScore[9].player + "\n"
+			+ main.hiScore.highScore[10].player;
+			
+			text8.x = 500;
+			text8.text = "\n\n" +
+			main.hiScore.highScore[1].score + "\n"
+			+ main.hiScore.highScore[2].score + "\n"
+			+ main.hiScore.highScore[3].score + "\n"
+			+ main.hiScore.highScore[4].score + "\n"
+			+ main.hiScore.highScore[5].score + "\n"
+			+ main.hiScore.highScore[6].score + "\n"
+			+ main.hiScore.highScore[7].score + "\n"
+			+ main.hiScore.highScore[8].score + "\n"
+			+ main.hiScore.highScore[9].score + "\n"
+			+ main.hiScore.highScore[10].score;
 		}
 
 	}
