@@ -11,7 +11,7 @@
 
 		public function Bullet(m:Main) {
 			main = m;
-			speed = 300;
+			speed = 500;
 			angle = 0;
 		}
 		

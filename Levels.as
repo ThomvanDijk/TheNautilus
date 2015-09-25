@@ -26,7 +26,7 @@
 		public function update():void {
 			if (main.playerScore == 60 && !tier01) {
 				main.player.speed *= 1.5;
-				main.display.upgradeText("speedx1.5!");
+				main.display.upgradeText("Speedx1.5!");
 				tier01 = true;
 			}
 			if (main.playerScore == 120 && !tier02) {
@@ -36,7 +36,7 @@
 			}
 			if (main.playerScore == 180 && !tier03) {
 				main.player.maxtemp = 8;
-				main.display.upgradeText("Cooldown lowered!");
+				main.display.upgradeText("Cooldown Lowered!");
 				tier03 = true;
 			}
 			if (main.playerScore == 240 && !tier04) {
@@ -51,7 +51,7 @@
 			}
 			if (main.playerScore == 360 && !tier06) {
 				main.player.speed *= 1.5;
-				main.display.upgradeText("speedx1.5!");
+				main.display.upgradeText("Speedx1.5!");
 				tier06 = true;
 			}
 			if (main.playerScore == 420 && !tier07) {
@@ -75,7 +75,7 @@
 				tier10 = true;
 			}
 			if (main.playerScore == 600 && !tier11) {
-				main.spawnRate = 0.96;
+				main.spawnRate = 0.92;
 				main.display.upgradeText("Spawn Rate Increased!");
 				tier11 = true;
 			}

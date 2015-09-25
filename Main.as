@@ -81,7 +81,7 @@
 			playerScore = 0;
 			deltaTime = 0;
 			maxParticles = 100;
-			spawnRate = 0.98;
+			spawnRate = 0.96;
 			maxEnemies = 30;
 			enemyType = 1;
 			

@@ -69,7 +69,7 @@
 		}
 
 		public function randomWeaponTemp():void {
-			weaponTemp = Math.ceil(Math.random()*150) + minimalCooldown;
+			weaponTemp = Math.ceil(Math.random()*120) + minimalCooldown;
 		}
 		
 	}

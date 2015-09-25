@@ -30,12 +30,21 @@
 		var inputField:TextField = new TextField();
 		
 		var mainFont:Visitor = new Visitor();
+		var healthBar:HealthBar;
 		var main:Main;
 
 		public function Display(m:Main) {
 			main = m;
+
+			healthBar = new HealthBar();
+			healthBar.x = -2000;
+			healthBar.y = 750;
+			healthBar.width = 200;
+			healthBar.height = 20;
+			main.addChild(healthBar);
 			
 			text1Format.size = 80;
+			text1Format.align = TextFormatAlign.CENTER;
 			text1Format.font = mainFont.fontName;
 			
 			text2Format.size = 30;
@@ -56,15 +65,18 @@
 			text1.x = -2000;
 			text1.border = false;
 			text1.textColor = 0xFFFFFF;
-			text1.autoSize = TextFieldAutoSize.CENTER;
+			text1.width = 600;
 			text1.defaultTextFormat = text1Format;
 			main.addChild(text1);
 			text1.text = "Game Over"
 			
 			text4.x = -2000;
+			text4.y = 300;
 			text4.border = false;
 			text4.textColor = 0xFFFFFF;
-			text4.autoSize = TextFieldAutoSize.CENTER;
+			text4.width = 650;
+			text4.height = 300;
+			text4.wordWrap = true;
 			text4.defaultTextFormat = text1Format;
 			
 			//already add the upgrades text
@@ -89,8 +101,8 @@
 			text5.x = -2000;
 			text5.border = false;
 			text5.textColor = 0xFFFFFF;
-			text5.autoSize = TextFieldAutoSize.LEFT;
-			text5.defaultTextFormat = text2Format;
+			text5.width = 600;
+			text5.defaultTextFormat = text5Format;
 			main.addChild(text5);
 			text5.text = "Enter your name:"
 
@@ -127,7 +139,8 @@
 			text8.y = 50;
 			text8.border = false;
 			text8.textColor = 0xFFFFFF;
-			text8.autoSize = TextFieldAutoSize.LEFT;
+			text8.width = 350;
+			text8.height = 600;
 			text8.defaultTextFormat = text4Format;
 			main.addChild(text8);
 			
@@ -148,10 +161,10 @@
 		}
 		
 		public function gameOverText():void {
-			text1.x = 150;
+			text1.x = 50;
 			text1.y = 250;
 			
-			text5.x = 220;
+			text5.x = 50;
 			text5.y = 360;
 			
 			inputField.x = 250;
@@ -162,6 +175,11 @@
 		}
 		
 		public function damageText():void {
+			healthBar.x -= 10;
+			healthBar.width -= 20;
+		}
+		
+		public function hiScoreText():void {
 			text2.x = 10;
 			text2.y = 765;
 			text2.text = "Hi-Score " + main.hiScore.highScore[1].score;
@@ -174,8 +192,7 @@
 		}
 		
 		public function upgradeText(upgrade):void {
-			text4.x = 300;
-			text4.y = 300;
+			text4.x = 25;
 			text4.alpha = 1;
 			text4.text = String(upgrade);
 		}
@@ -209,7 +226,7 @@
 			+ main.hiScore.highScore[9].player + "\n"
 			+ main.hiScore.highScore[10].player;
 			
-			text8.x = 500;
+			text8.x = 330;
 			text8.text = "\n\n" +
 			main.hiScore.highScore[1].score + "\n"
 			+ main.hiScore.highScore[2].score + "\n"

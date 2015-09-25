@@ -17,7 +17,7 @@
 		public function Player(m:Main) {
 			main = m;
 			damageTaken = 0;
-			speed = 200;
+			speed = 220;
 			maxtemp = 10;
 			cooldown = maxtemp;
 			state = 0;
