@@ -17,8 +17,12 @@
 		
 		public function onClick(event:MouseEvent):void {
 			if(main.display.inputField.text.length <= 12 && 
-				main.display.inputField.text.length >= 1 &&
-				(main.display.inputField.text.indexOf(",") == -1)) {
+			main.display.inputField.text.length >= 1 &&
+			(main.display.inputField.text.indexOf(",") == -1)) {
+				main.sound.buttonHit();
+				main.sound.stopMusic();
+				main.sound.startMusic();
+					
 				//On stage text and input fields are mover away.
 				main.display.text1.x = -2000;
 				main.display.text2.x = -2000;
@@ -49,6 +53,9 @@
 				main.player.state = 0;
 				main.player.playFrame = 1;
 				
+				//Set the color white again.
+				main.display.inputField.textColor = 0x000000;
+				
 				//Save the players name.
 				if(main.playerScore >= main.hiScore.highScore[10].score) {
 					var temp:String;
@@ -64,6 +71,9 @@
 				main.start.x = 350;
 				main.score.x = 350;
 				main.credits.x = 350;
+			}
+			else {
+				main.display.inputField.textColor = 0xFF0000;
 			}
 		}
 

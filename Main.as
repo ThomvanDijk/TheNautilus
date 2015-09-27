@@ -35,6 +35,7 @@
 		var credits:Credits;
 		var back:Back;
 		var submit:Submit;
+		var sound:Sounds
 		
 		var playerScore:int;
 		var maxParticles:int;
@@ -75,6 +76,11 @@
 			submit = new Submit(this);
 			addChild(submit);
 			submit.x = -2000;
+			
+			sound = new Sounds(this);
+			addChild(sound);
+			sound.x = 645;
+			sound.y = 765;
 			
 			hiScore = new HiScore(this);
 			
@@ -180,6 +186,7 @@
 							display.scoreText();
 							i = 0;
 							//j = null;
+							sound.enemyExplode();
 						}
 					}
 					if (enemyList[j].state == 2) {
@@ -199,6 +206,7 @@
 					bulletListEnemy.splice(i,1);
 					player.bulletHit();
 					display.damageText();
+					sound.playerHit();
 				}
 			}
 		}
@@ -207,6 +215,7 @@
 			for (var i:int=0; i<enemyList.length; i++) {
 				if (player.hitTestObject(enemyList[i])) {
 					player.bulletHit();
+					sound.enemyExplode();
 					display.damageText();
 					if (enemyList[i].state < 2) {
 						enemyList[i].state = 1;
@@ -257,6 +266,7 @@
 				bullet.rotation = 90;
 				setChildIndex(bullet, 0);
 				bulletListPlayer.push(bullet);
+				sound.playerShoot();
 			}
 		}
 		

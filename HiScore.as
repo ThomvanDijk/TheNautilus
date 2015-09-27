@@ -18,7 +18,7 @@
 		var scoreLoaded:Boolean;
 		var highScore:Array;
 		
-		public static const URL:String = "http://localhost/portfolio/develop/flashcontent/thenautilus/highscores.php";
+		public static const URL:String = "http://thomvandijk.net/develop/flashcontent/thenautilus/highscores.php";
 		
 		private var getLoader:URLLoader;
 		private var getRequest:URLRequest;

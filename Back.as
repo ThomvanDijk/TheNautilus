@@ -14,6 +14,8 @@
 		}
 		
 		public function onClick(event:MouseEvent):void {
+			main.sound.buttonHit();
+			
 			//Clean the stage
 			main.display.text6.x = -2000;
 			main.display.text7.x = -2000;

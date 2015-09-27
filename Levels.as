@@ -24,57 +24,57 @@
 		}
 		
 		public function update():void {
-			if (main.playerScore == 60 && !tier01) {
+			if (main.playerScore == 80 && !tier01) {
 				main.player.speed *= 1.5;
 				main.display.upgradeText("Speedx1.5!");
 				tier01 = true;
 			}
-			if (main.playerScore == 120 && !tier02) {
+			if (main.playerScore == 170 && !tier02) {
 				main.enemyType = 2;
 				main.display.upgradeText("New Enemy!");
 				tier02 = true;
 			}
-			if (main.playerScore == 180 && !tier03) {
+			if (main.playerScore == 270 && !tier03) {
 				main.player.maxtemp = 8;
 				main.display.upgradeText("Cooldown Lowered!");
 				tier03 = true;
 			}
-			if (main.playerScore == 240 && !tier04) {
+			if (main.playerScore == 380 && !tier04) {
 				main.enemyType = 3;
 				main.display.upgradeText("New Enemy!");
 				tier04 = true;
 			}
-			if (main.playerScore == 300 && !tier05) {
+			if (main.playerScore == 500 && !tier05) {
 				main.enemyCooldown = 8;
 				main.display.upgradeText("Enemies Schoot Faster!");
 				tier05 = true;
 			}
-			if (main.playerScore == 360 && !tier06) {
+			if (main.playerScore == 630 && !tier06) {
 				main.player.speed *= 1.5;
 				main.display.upgradeText("Speedx1.5!");
 				tier06 = true;
 			}
-			if (main.playerScore == 420 && !tier07) {
+			if (main.playerScore == 770 && !tier07) {
 				main.enemyType = 4;
 				main.display.upgradeText("New Enemy!");
 				tier07 = true;
 			}
-			if (main.playerScore == 480 && !tier08) {
+			if (main.playerScore == 920 && !tier08) {
 				main.player.maxtemp = 6;
 				main.display.upgradeText("Cooldown Lowered");
 				tier08 = true;
 			}
-			if (main.playerScore == 540 && !tier09) {
+			if (main.playerScore == 1080 && !tier09) {
 				main.enemyCooldown = 6;
 				main.display.upgradeText("Enemies Schoot Faster!");
 				tier09 = true;
 			}
-			if (main.playerScore == 600 && !tier10) {
+			if (main.playerScore == 1250 && !tier10) {
 				main.enemyType = 5;
 				main.display.upgradeText("New Enemy!");
 				tier10 = true;
 			}
-			if (main.playerScore == 600 && !tier11) {
+			if (main.playerScore == 1430 && !tier11) {
 				main.spawnRate = 0.92;
 				main.display.upgradeText("Spawn Rate Increased!");
 				tier11 = true;

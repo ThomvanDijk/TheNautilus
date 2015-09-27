@@ -14,6 +14,8 @@
 		}
 		
 		public function onClick(event:MouseEvent):void {
+			main.sound.buttonHit();
+			
 			//Clean the stage.
 			main.start.x = -2000;
 			main.score.x = -2000;

@@ -2,6 +2,8 @@ Animations/
 Backup/
 Fonts/
 Textures/
+Sounds/
 *.swf
 *.fla
 *.html
+*.ttf

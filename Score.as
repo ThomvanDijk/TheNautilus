@@ -24,6 +24,8 @@
 		}
 		
 		public function onClick(event:MouseEvent):void {
+			main.sound.buttonHit();
+			
 			clicked = true;
 			main.hiScore.loadScore();
 			

@@ -1,8 +1,7 @@
 ﻿package  {
 	
 	import flash.display.SimpleButton;
-	import flash.events.*;
-	import flash.display.MovieClip;
+	import flash.events.MouseEvent;
 	
 	public class Start extends SimpleButton {
 		
@@ -25,6 +24,8 @@
 		}
 		
 		public function onClick(event:MouseEvent):void {
+			main.sound.buttonHit();
+			
 			clicked = true;
 			main.started = true;
 			main.hiScore.loadScore();
@@ -40,7 +41,7 @@
 			main.playerScore = 0;
 			main.enemyCooldown = 10;
 			main.enemyType = 1;
-			main.display.healthBar.x = 580;
+			main.display.healthBar.x = 420;
 			
 			main.levels.tier01 = false;
 			main.levels.tier02 = false;

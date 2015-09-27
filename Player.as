@@ -41,6 +41,7 @@
 			if (state == 2) {
 				this.cooldown = -1;
 				main.started = false;
+				main.sound.playerExplode();
 				main.display.text4.x = -2000;
 			}
 			this.gotoAndStop(playFrame);
